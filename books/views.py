@@ -109,5 +109,4 @@ class BookListView(LoginRequiredMixin, View):
         else:
             title = ''
         books = books.filter(title__icontains=title)
-        permissions = Permission.objects.all()
-        return render(request, 'books/obj_list.html', {'obj_list': books, 'form': form, 'pers':permissions})
+        return render(request, 'books/obj_list.html', {'obj_list': books, 'form': form})
